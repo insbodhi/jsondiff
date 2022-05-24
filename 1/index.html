@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="formatters-styles/html.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="formatters-styles/annotated.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/codemirror.min.css" type="text/css" media="screen" />
+  <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jsondiffpatch/dist/jsondiffpatch.umd.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/codemirror.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/mode/javascript/javascript.min.js"></script>
+</head>
+
+<body>
+    <div class="buttons">
+    <div>
+      <input id="swap" type="button" value="Swap">
+      <input id="clear" type="button" value="Clear">
+    </div>
+  </div>
+  <div class="json-input">
+    <div id="json-panel-left">
+      <label for="json-input-left">
+        <h2>JSON Left</h2>
+      </label>
+      <!-- <button class="prettyfy" type="button" title="Pretty print">{ }</button> -->
+      <textarea id="json-input-left">
+        loading...
+      </textarea>
+      <span class="error-message"></span>
+    </div>
+    <div id="json-panel-right">
+      <label for="json-input-right">
+        <h2>JSON Right</h2>
+      </label>
+      <!-- <button class="prettyfy" type="button" title="Pretty print">{ }</button> -->
+      <textarea id="json-input-right">
+        loading...
+      </textarea>
+      <span class="error-message"></span>
+    </div>
+  </div>
+  <div id="results">
+    
+    <div id="delta-panel-visual">
+      <div class="header-options">
+        <input id="showunchanged" type="checkbox">
+        <label for="showunchanged">
+          Show unchanged values
+        </label>
+      </div>
+      <p id="visualdiff">
+      </p>
+    </div>
+    <div id="delta-panel-annotated" style="display: none;">
+      <p id="annotateddiff">
+      </p>
+    </div>
+    <div id="delta-panel-json" style="display: none;">
+      <p>
+        (<span id="jsondifflength"></span>
+        KB)
+      </p>
+      <textarea id="json-delta" readonly>
+      </textarea>
+      <span class="error-message"></span>
+    </div>
+  </div>
+  
+  <script type="text/javascript" src="demo.js"></script>
+
+</body>
+
+</html>
